@@ -158,7 +158,7 @@ public class Blackjack {
 					if (dealer.faceUpCounter == 11) {
 						
 						System.out.print("Would you like a hint regarding insurance? Enter 'yes' or 'no': ");
-						String insuranceHint = scanner.nextLine().toLowerCase();
+						String insuranceHint = scanner.next().toLowerCase();
 						if (insuranceHint.equals("yes") == true) {
 							System.out.println("The running count is: " + runningCount);
 							if (runningCount >= 0) {
@@ -174,10 +174,10 @@ public class Blackjack {
 						// asks player if he wants to buy insurance (if dealer has ACE)
 						System.out.print(
 								"Player" + (j + 1) + ", would you like to buy insurance? Enter 'yes' or 'no': ");
-						String insuranceAns = scanner.nextLine().toLowerCase();
+						String insuranceAns = scanner.next().toLowerCase();
 						while ((insuranceAns.equals("yes") != false) && (insuranceAns.equals("no") != false)) {
 							System.out.println("Enter 'yes' to buy insurance, otherwise enter 'no'");
-							insuranceAns = scanner.nextLine().toLowerCase();
+							insuranceAns = scanner.next().toLowerCase();
 						}
 						
 						// if player says yes to buy insurance, player is asked to enter insurance bet - also displays max the player can enter
@@ -200,7 +200,7 @@ public class Blackjack {
 					if (players[j].canSplit == true) {
 						
 						System.out.print("Would you like a hint regarding splitting? Enter 'yes' or 'no': ");
-						String splitHint = scanner.nextLine().toLowerCase();
+						String splitHint = scanner.next().toLowerCase();
 						
 						// gives a hint if player says yes using value of player's hand
 						if (splitHint.equals("yes")) {
@@ -215,11 +215,11 @@ public class Blackjack {
 						
 						// asks player if he wants to split
 						System.out.print("Would you like to split? Enter 'yes' or 'no': ");
-						String splitDecision = scanner.nextLine();
+						String splitDecision = scanner.next();
 						splitDecision = splitDecision.toLowerCase();
 						while ((splitDecision.equals("yes") == false) && (splitDecision.equals("no") == false)) {
 							System.out.print("Enter 'yes' to split, otherwise enter 'no': ");
-							splitDecision = scanner.nextLine().toLowerCase();
+							splitDecision = scanner.next().toLowerCase();
 						}
 						
 						// if player decides to split, it asks if player wants hint regarding splitting 
@@ -231,7 +231,7 @@ public class Blackjack {
 								System.out.println(
 										"Player" + (j + 1) + "'s current 1st hand value: " + players[j].counter);
 								System.out.print("Would you like a hint regarding your 1st hand? Enter 'yes' or 'no': ");
-								String splitHint2 = scanner.nextLine().toLowerCase();
+								String splitHint2 = scanner.next().toLowerCase();
 								
 								// gives hint regarding splitting if player says 'yes'
 								if(splitHint2.equals("yes") == true) {
@@ -251,7 +251,7 @@ public class Blackjack {
 								
 								// starts to deal cards on player's 1st split hand 
 								System.out.print("Player" + (j + 1) + ", enter 'hit' or 'stand': ");
-								decision = scanner.nextLine();
+								decision = scanner.next();
 								decision = decision.toLowerCase();
 								if (decision.equals("hit")) {
 									Card cardx = deck.deal();
@@ -290,7 +290,7 @@ public class Blackjack {
 								
 								// asks player if player wants a hint
 								System.out.println("Would you like a hint regarding your 2nd hand? Enter 'yes' or 'no': ");
-								String needsHint = scanner.nextLine().toLowerCase();
+								String needsHint = scanner.next().toLowerCase();
 								
 								// gives a hint
 								if(needsHint.equals("yes") == true) {
@@ -310,7 +310,7 @@ public class Blackjack {
 								
 								// asks player to hit or stand on 2nd hand
 								System.out.print("Player" + (j + 1) + ", enter 'hit' or 'stand': ");
-								decision = scanner.nextLine();
+								decision = scanner.next();
 								decision = decision.toLowerCase();
 								if (decision.equals("hit")) {
 									Card cardx = deck.deal();
@@ -352,7 +352,7 @@ public class Blackjack {
 					if ((players[j].canDoubleDown == true) && (players[j].bet <= players[j].balance)) {
 						
 						System.out.print("Do you want a hint regarding doubling down? Enter 'yes' or 'no': ");
-						String hintDD = scanner.nextLine().toLowerCase();
+						String hintDD = scanner.next().toLowerCase();
 						
 						// gives hint regarding doubling down if player says 'yes'
 						if(hintDD.equals("yes") == true) {
@@ -373,10 +373,10 @@ public class Blackjack {
 						
 						// asks player if the player wants to double down 
 						System.out.print("Would you like to double down? Enter 'yes' or 'no': ");
-						String ansToDD = scanner.nextLine().toLowerCase();
+						String ansToDD = scanner.next().toLowerCase();
 						while ((ansToDD.equals("yes") == false) && (ansToDD.equals("no") == false)) {
 							System.out.print("Enter 'yes' to double down, otherwise enter 'no': ");
-							ansToDD = scanner.nextLine();
+							ansToDD = scanner.next();
 						}
 						
 						// if player wants to double down, the player has another bet and is given only one card
@@ -411,7 +411,7 @@ public class Blackjack {
 					if (players[j].secondCounter == 0) {
 						
 						System.out.print("Would you like a hint regarding your hand? Enter 'yes' or 'no': ");
-						String needsHint = scanner.nextLine().toLowerCase();
+						String needsHint = scanner.next().toLowerCase();
 						if(needsHint.equals("yes")) {
 							if (runningCount > 0) {
 								System.out.println("The running count is " + runningCount + ". Next card will probably be a high value card. Hit if hand value is low.");
@@ -423,7 +423,7 @@ public class Blackjack {
 						
 						// asks player to 'hit' or 'stand'
 						System.out.print("Player" + (j + 1) + ", enter 'hit' or 'stand': ");
-						decision = scanner.nextLine();
+						decision = scanner.next();
 						decision = decision.toLowerCase();
 						if (decision.equals("hit")) {
 							// deals a new card to a player and checks if it's an ace to increment by 10
@@ -659,10 +659,10 @@ public class Blackjack {
 
 			// asks if remaining players want to start next round
 			System.out.print("Start next round? Enter 'yes' or 'no': ");
-			ans = scanner.nextLine();
+			ans = scanner.next();
 			while ((ans.equals("yes") == false) && (ans.equals("no") == false)) {
 				System.out.print("Enter 'yes' or 'no' for next round: ");
-				ans = scanner.nextLine();
+				ans = scanner.next();
 			}
 			System.out.println();
 		}
